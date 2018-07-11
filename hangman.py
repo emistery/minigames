@@ -65,6 +65,7 @@ while turncount <= newround:
     if turncount == newround+1:
         print("Helaas, het spel is voorbij!")
         print("Het woord was: " + chosenword)
+        print("Het woord wordt gekozen uit een grote lijst, als je denkt dat er iets mis is of dit woord er niet in thuis hoort, neem dan contact op.")
         input("Druk op Enter om af te sluiten...")
     if foundcount == len(chosenword):
         print("Gefeliciteerd, je hebt gewonnen!")
