@@ -1,4 +1,7 @@
-import random
+# Made by Emiel Kok
+# Small simple version of 'hangman'
+
+from random import randint
 wordlist = list()
 
 
