@@ -37,11 +37,12 @@ print("* " * len(chosenword))
 print("_ " * len(chosenword))
 turncount = 0
 foundletters = list()
+chosenletters = list()
 
 while turncount <= newround:
     foundcount = 0
     letter = input("Kies een letter: ")
-    if len(letter) == 1 and letter not in foundletters:
+    if len(letter) == 1 and letter not in foundletters and letter not in chosenletters:
         if letter in chosenword:
             print("Goed gevonden!")
             foundletters.append(letter)
@@ -55,12 +56,13 @@ while turncount <= newround:
             #print(foundletters)
         else:
             print("Helaas, probeer een andere letter")
+            chosenletters.append(letter)
             print("\n Je hebt nog " + str(newround - turncount) + " beurten over!")
             turncount += 1
 
     elif len(letter) != 1:
         print("Voer maximaal 1 letter in!")
-    elif letter in foundletters:
+    elif letter in foundletters or letter in chosenletters:
         print("Deze letter heb je al gekozen, kies een andere.")
     if turncount == newround+1:
         print("Helaas, het spel is voorbij!")
@@ -69,4 +71,5 @@ while turncount <= newround:
         input("Druk op Enter om af te sluiten...")
     if foundcount == len(chosenword):
         print("Gefeliciteerd, je hebt gewonnen!")
+        input("Druk op Enter om af te sluiten...")
         break
